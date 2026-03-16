@@ -1,0 +1,218 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* The Pawsome Retreat - Design Tokens */
+  /* Brand Colors: Deep Teal (Green), Cream, Safety Orange (Accent) */
+  
+  --background: #FDF8F3;                       /* Warm Cream */
+  --foreground: #0D5C63;                       /* Deep Teal (Green) */
+  
+  --card: rgba(255, 255, 255, 0.7);           /* Glass Card */
+  --card-foreground: #0D5C63;                 /* Deep Teal */
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #0D5C63;
+  
+  /* Primary (Deep Teal - Green) */
+  --primary: #0D5C63;                          /* Deep Teal */
+  --primary-foreground: #FDF8F3;              /* Cream */
+  
+  /* Secondary */
+  --secondary: #F5EDE4;                        /* Muted Cream */
+  --secondary-foreground: #0D5C63;
+  
+  /* Muted */
+  --muted: #EDE5DC;
+  --muted-foreground: #1A7A82;                /* Mid Teal */
+  
+  /* ACCENT - Safety Orange (CTA Color) */
+  --accent: #E86A33;                           /* Safety Orange */
+  --accent-foreground: #FFFFFF;
+  
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Borders & Inputs */
+  --border: rgba(13, 92, 99, 0.15);           /* Teal-tinted border */
+  --input: #F5EDE4;
+  --ring: #E86A33;                             /* Orange focus ring */
+  
+  --chart-1: #E86A33;                          /* Orange */
+  --chart-2: #0D5C63;                          /* Deep Teal */
+  --chart-3: #1A7A82;                          /* Mid Teal */
+  --chart-4: #F2994A;                          /* Light Orange */
+  --chart-5: #F9C784;                          /* Peach */
+  
+  --radius: 0.625rem;
+  
+  --sidebar: #0D5C63;
+  --sidebar-foreground: #FDF8F3;
+  --sidebar-primary: #E86A33;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #095257;
+  --sidebar-accent-foreground: #FDF8F3;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #E86A33;
+}
+
+/* CTA Pulse Animation for Hero Button */
+@keyframes pulse-accent {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 106, 51, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(232, 106, 51, 0); }
+}
+
+.animate-pulse-accent {
+  animation: pulse-accent 2s ease-in-out infinite;
+}
+
+/* Glass Card Effect with Glow */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(13, 92, 99, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+    0 4px 20px rgba(232, 106, 51, 0.05);
+}
+
+.glass-card:hover {
+  box-shadow: 
+    0 12px 40px rgba(13, 92, 99, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 4px 30px rgba(232, 106, 51, 0.1);
+}
+
+/* Glow Card Variant (more colorful) */
+.glow-card-teal {
+  background: linear-gradient(135deg, rgba(13, 92, 99, 0.08) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(13, 92, 99, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(13, 92, 99, 0.12),
+    0 0 20px rgba(13, 92, 99, 0.05) inset;
+}
+
+.glow-card-orange {
+  background: linear-gradient(135deg, rgba(232, 106, 51, 0.08) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 106, 51, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(232, 106, 51, 0.12),
+    0 0 20px rgba(232, 106, 51, 0.05) inset;
+}
+
+/* Icon Box with Colored Transparency */
+.icon-box-teal {
+  background: rgba(13, 92, 99, 0.1);
+  border: 1px solid rgba(13, 92, 99, 0.15);
+}
+
+.icon-box-orange {
+  background: rgba(232, 106, 51, 0.1);
+  border: 1px solid rgba(232, 106, 51, 0.15);
+}
+
+.icon-box-green {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.icon-box-blue {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll Animation Classes */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-up-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.animate-fade-up-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.animate-fade-up-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-scale-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
