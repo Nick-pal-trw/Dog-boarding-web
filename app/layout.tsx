@@ -10,6 +10,27 @@ export const metadata: Metadata = {
   title: 'The Pawsome Retreat | Luxury Dog Boarding in Orange County',
   description: 'Premium dog boarding with 24/7 camera-monitored private cabins and daily digital pup-reports. Your dog deserves a luxury home away from home.',
   generator: 'v0.app',
+  openGraph: {
+    title: 'The Pawsome Retreat | Luxury Dog Boarding in Orange County',
+    description: 'Premium dog boarding with 24/7 camera-monitored private cabins and daily digital pup-reports. Your dog deserves a luxury home away from home.',
+    siteName: 'The Pawsome Retreat',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'A happy Golden Retriever relaxing in a luxury dog boarding suite',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Pawsome Retreat | Luxury Dog Boarding',
+    description: '24/7 camera-monitored luxury cabins for your peace of mind.',
+    images: ['/og-image.png'],
+  },
   icons: {
     icon: [
       {
