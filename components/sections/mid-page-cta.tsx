@@ -1,5 +1,5 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { BookingForm } from "@/components/booking-form"
 
 export function MidPageCTA() {
   return (
@@ -13,14 +13,14 @@ export function MidPageCTA() {
             Join thousands of happy pet parents who trust us with their furry family members.
           </p>
           <div className="mt-8">
-            <BookingForm>
+            <Link href="/book">
               <Button
                 size="lg"
                 className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8"
               >
                 Check Availability
               </Button>
-            </BookingForm>
+            </Link>
           </div>
         </div>
       </div>

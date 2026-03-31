@@ -4,7 +4,6 @@ import { useState, useCallback } from "react"
 import Link from "next/link"
 import { Menu, X, PawPrint } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { BookingForm } from "@/components/booking-form"
 
 const navLinks = [
   { href: "#features", label: "Services" },
@@ -61,11 +60,11 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <BookingForm>
+            <Link href="/book">
               <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
                 Book a Suite
               </Button>
-            </BookingForm>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,11 +92,11 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <BookingForm>
+              <Link href="/book">
                 <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-2">
                   Book a Suite
                 </Button>
-              </BookingForm>
+              </Link>
             </nav>
           </div>
         )}

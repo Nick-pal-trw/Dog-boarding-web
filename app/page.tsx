@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/sections/testimonials"
 import { FAQ } from "@/components/sections/faq"
 import { TrustBadges } from "@/components/sections/trust-badges"
 import { Footer } from "@/components/sections/footer"
+import { ChatWidget } from "@/components/chat-widget"
 import { Toaster } from "@/components/ui/sonner"
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         <TrustBadges />
       </main>
       <Footer />
+      <ChatWidget />
       <Toaster position="top-center" />
     </>
   )

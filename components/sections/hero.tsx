@@ -1,5 +1,5 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { BookingForm } from "@/components/booking-form"
 
 export function Hero() {
   return (
@@ -13,21 +13,21 @@ export function Hero() {
             The Peace-of-Mind Suite: 24/7 camera-monitored private cabins with daily digital pup-reports. Designed for the most anxious shadows.
           </p>
           <div className="mt-10">
-            <BookingForm>
+            <Link href="/book">
               <Button
                 size="lg"
                 className="bg-accent text-accent-foreground hover:bg-accent/90 animate-pulse-accent text-lg px-8 py-6"
               >
                 Check Availability
               </Button>
-            </BookingForm>
+            </Link>
           </div>
           <p className="mt-4 text-sm text-primary-foreground/70">
             No commitment required. We&apos;ll respond within 24 hours.
           </p>
         </div>
       </div>
-      
+
       {/* Decorative wave at bottom */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
         <svg

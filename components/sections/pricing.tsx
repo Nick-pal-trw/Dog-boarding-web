@@ -1,10 +1,10 @@
 "use client"
 
+import Link from "next/link"
 import { Check } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { BookingForm } from "@/components/booking-form"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const plans = [
@@ -45,7 +45,7 @@ export function Pricing() {
   return (
     <section id="pricing" className="py-16 lg:py-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div 
+        <div
           ref={ref}
           className={`text-center mb-12 lg:mb-16 animate-fade-up ${isVisible ? "is-visible" : ""}`}
         >
@@ -62,8 +62,8 @@ export function Pricing() {
             <Card
               key={plan.name}
               className={`relative transition-all duration-300 hover:scale-[1.02] animate-fade-up animate-fade-up-delay-${index + 1} ${isVisible ? "is-visible" : ""} ${
-                plan.popular 
-                  ? "glow-card-orange border-accent border-2" 
+                plan.popular
+                  ? "glow-card-orange border-accent border-2"
                   : "glow-card-teal"
               }`}
             >
@@ -91,7 +91,7 @@ export function Pricing() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <BookingForm>
+                <Link href="/book" className="w-full">
                   <Button
                     className={`w-full ${
                       plan.popular
@@ -102,7 +102,7 @@ export function Pricing() {
                   >
                     Reserve Now
                   </Button>
-                </BookingForm>
+                </Link>
               </CardFooter>
             </Card>
           ))}
